@@ -4,18 +4,10 @@
  */
 package ModeloInscripcion;
 
-import Participantes.Participante;
-import java.util.Date;
-
 /**
  *
  * @author Student
  */
-public class Inscripcion {
-    private int id;
-    private String Nombre;
-    private String Taller;
-    private Participante participante;
-    private Date fecha;
-    private String asistencia;
+public class InscripcionDTO {
+    
 }
