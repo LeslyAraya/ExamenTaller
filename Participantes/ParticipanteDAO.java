@@ -6,11 +6,8 @@ package Participantes;
 
 import Conexion.Conexion;
 import Modelo.DAO.DAO;
-<<<<<<< HEAD
 import Modelo.Dao.Dao;
 import java.sql.Connection;
-=======
->>>>>>> 6e5a416 (Correcciones)
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,7 +25,7 @@ public class ParticipanteDAO extends DAO<ParticipanteDTO>{
     }
 
     @Override
-<<<<<<< HEAD
+
     public boolean Agregar(Object dto) throws SQLException {
        String sql = "INSERT INTO participantes (id, nombre, telefono, correo) VALUES (?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -37,7 +34,7 @@ public class ParticipanteDAO extends DAO<ParticipanteDTO>{
             statement.setString(3, dto.getTelefono());
             statement.setString(4, dto.getCorreo));
             return statement.executeUpdate() > 0; 
-=======
+
     public boolean create(CustomerDTO dto) throws SQLException {
         if (dto == null || !validatePK(dto.getId())) {
             return false;
@@ -50,19 +47,19 @@ public class ParticipanteDAO extends DAO<ParticipanteDTO>{
             stmt.setString(4, dto.getPhone());
             stmt.setString(5, dto.getEmail());
             return stmt.executeUpdate() > 0;
->>>>>>> 6e5a416 (Correcciones)
+
         }
     }
 
     @Override
-<<<<<<< HEAD
+
     public boolean Eliminar(Object dto) throws SQLException {
      String sql = "DELETE FROM participante WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, (String) id);
             return statement.executeUpdate() > 0;
         }
-=======
+
     public CustomerDTO read(Object id) throws SQLException {
         if (id == null || String.valueOf(id).trim().isEmpty()) {
             return null;
@@ -135,6 +132,5 @@ public class ParticipanteDAO extends DAO<ParticipanteDTO>{
 
     public boolean validatePK(Object id) throws SQLException {
         return read(id) == null;
->>>>>>> 6e5a416 (Correcciones)
     }
 }
