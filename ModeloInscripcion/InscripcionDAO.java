@@ -6,7 +6,7 @@ package ModeloInscripcion;
 
 import Conexion.Conexion;
 import Modelo.DAO.DAO;
-import Modelo.Dao.Dao;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +18,9 @@ import java.util.List;
  *
  * @author Student
  */
-public class InscripcionDAO extends DAO<InscripcionDTO> {
+public class InscripcionDAO extends DAO<Inscripcion> {
+
+    private Object id;
 
     public InscripcionDAO(Conexion connection) {
         super(connection);
@@ -27,26 +29,26 @@ public class InscripcionDAO extends DAO<InscripcionDTO> {
     @Override
     public boolean Agregar(Object dto) throws SQLException {
         String sql = "INSERT INTO inscripcion (id, nombre, Taller, participante,fecha,asistencia) VALUES (?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, dto.getId());
-            statement.setString(2, dto.getNombre());
-            statement.setString(3, dto.getTaller());
-            statement.setString(4, dto.getParticipante));
-             statement.setString(4, dto.getFecha));
-              statement.setString(4, dto.getAsistencia));
-             
-            return statement.executeUpdate() > 0; 
+        try ( PreparedStatement stmt = connection.preparedStatement(sql)) {
+            stmt.setString(1, sql);
+            stmt.setString(2, sql);
+            stmt.setString(3, sql);
+            stmt.setString(4, sql);
+            stmt.setString(5, sql);
+            stmt.setString(6, sql);
+
+            return stmt.executeUpdate() > 0;
         }
     }
 
     @Override
     public boolean Eliminar(Object dto) throws SQLException {
-     String sql = "DELETE FROM inscripcion WHERE id = ?";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+        String sql = "DELETE FROM inscripcion WHERE id = ?";
+        try ( PreparedStatement statement = connection.preparedStatement(sql)) {
             statement.setString(1, (String) id);
             return statement.executeUpdate() > 0;
         }
-   
+
     }
-    
+
 }

@@ -41,7 +41,7 @@ public class ParticipanteDAO extends DAO<ParticipanteDTO>{
 
     public boolean Eliminar(Object dto) throws SQLException {
      String sql = "DELETE FROM participante WHERE id = ?";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.preparedStatement(sql)) {
             statement.setString(1, (String) id);
             return statement.executeUpdate() > 0;
         }
