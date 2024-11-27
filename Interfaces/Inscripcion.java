@@ -13,7 +13,14 @@ import javax.swing.JOptionPane;
  */
 public class Inscripcion extends javax.swing.JFrame {
 
+
     private static void Agregar(Inscripcion inscripcion) {
+
+    private static void delete() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private static void delete(Inscripcion inscripcion) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
   Inscripcion inscripcion;
@@ -232,7 +239,7 @@ public class Inscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-          if(inscripcion==null){
+          if(inscripcion == null){
               showError("No se encuentra ningun particiante cargado actualmente");
               return;
               
