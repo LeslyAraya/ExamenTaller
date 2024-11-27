@@ -31,9 +31,9 @@ public class InscripcionDAO extends DAO<InscripcionDTO> {
             statement.setString(1, dto.getId());
             statement.setString(2, dto.getNombre());
             statement.setString(3, dto.getTaller());
-            statement.setString(4, dto.getparticipante));
-             statement.setString(4, dto.getfecha));
-              statement.setString(4, dto.getasistencia));
+            statement.setString(4, dto.getParticipante));
+             statement.setString(4, dto.getFecha));
+              statement.setString(4, dto.getAsistencia));
              
             return statement.executeUpdate() > 0; 
         }
