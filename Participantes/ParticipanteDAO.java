@@ -5,13 +5,12 @@
 package Participantes;
 
 import Modelo.DAO.DAO;
-<<<<<<< HEAD
-=======
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
->>>>>>> 9db4f79 (Se agregan cambios)
+
 import java.sql.SQLException;
 
 
@@ -20,22 +19,6 @@ import java.sql.SQLException;
  * @author Student
  */
 public class ParticipanteDAO extends DAO<ParticipanteDTO> {
-
-    @Override
-    public boolean Agregar(Object dto) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-<<<<<<< HEAD
-    public boolean Eliminar(Object dto) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    
-
-}
-=======
 
     public boolean Agregar(Object dto) throws SQLException {
         String sql = "INSERT INTO participantes (id, nombre, telefono, correo) VALUES (?, ?, ?, ?)";
@@ -59,4 +42,3 @@ public class ParticipanteDAO extends DAO<ParticipanteDTO> {
         }
     }
 }
->>>>>>> 9db4f79 (Se agregan cambios)
