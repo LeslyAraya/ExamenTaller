@@ -8,9 +8,6 @@ package Modelo.DAO;
  *
  * @author Student
  */
-public abstract class  DAO<DTO> {
-    protected Connection;
-    
-    public DAO(C)
+public interface DAO {
     
 }
