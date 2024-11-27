@@ -6,6 +6,7 @@ package Conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
@@ -39,5 +40,9 @@ public class Conexion {
 
     public Connection getConexion() {
         return conexion;
+    }
+
+    public PreparedStatement preparedStatement(String query) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
