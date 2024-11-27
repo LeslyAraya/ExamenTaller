@@ -13,11 +13,14 @@ import javax.swing.JOptionPane;
  */
 public class Inscripcion extends javax.swing.JFrame {
 
-<<<<<<< HEAD
+
     private static void Agregar(Inscripcion inscripcion) {
-=======
+
+    private static void delete() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     private static void delete(Inscripcion inscripcion) {
->>>>>>> e1fd5a1 (Se hacen correciones en el boton de eliminar)
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
   Inscripcion inscripcion;
