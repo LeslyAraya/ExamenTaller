@@ -12,6 +12,10 @@ import javax.swing.JOptionPane;
  * @author Student
  */
 public class Inscripcion extends javax.swing.JFrame {
+
+    private static void Agregar(Inscripcion inscripcion) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
   Inscripcion inscripcion;
   
     /**
@@ -213,7 +217,18 @@ public class Inscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAsistenciaActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
- 
+        if(inscripcion == null){
+            showError("No se puede agregar");
+            return;
+        }
+         int option = JOptionPane.showConfirmDialog(
+                  this,
+                  "¿esta seguro que quiere inscribir el carro?",
+                  "Confirmacion de agregacion",
+                  JOptionPane.NO_OPTION
+         );
+         if(option==JOptionPane.NO_OPTION) return;
+         Inscripcion.Agregar(inscripcion);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -237,7 +252,7 @@ public class Inscripcion extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the Nimbus look and feel
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
