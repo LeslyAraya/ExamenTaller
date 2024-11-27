@@ -25,18 +25,20 @@ public class ParticipanteDAO extends DAO<ParticipanteDTO>{
     }
 
     @Override
+
     public boolean Agregar(Object dto) throws SQLException {
        String sql = "INSERT INTO participantes (id, nombre, telefono, correo) VALUES (?, ?, ?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, dto.getId());
-            statement.setString(2, dto.getNombre());
-            statement.setString(3, dto.getTelefono());
-            statement.setString(4, dto.getCorreo));
-            return statement.executeUpdate() > 0; 
+       return false;
+    }
+    String query = "Call InscripcionCrear(?,?,?,?)";
+    try(PreparedStatement stmt = connection.preparedStatement(query){
+    
+
         }
     }
-
+        
     @Override
+
     public boolean Eliminar(Object dto) throws SQLException {
      String sql = "DELETE FROM participante WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -44,5 +46,4 @@ public class ParticipanteDAO extends DAO<ParticipanteDTO>{
             return statement.executeUpdate() > 0;
         }
     }
-    
 }
