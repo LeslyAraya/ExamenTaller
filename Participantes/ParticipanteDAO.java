@@ -4,15 +4,9 @@
  */
 package Participantes;
 
-import Conexion.Conexion;
 import Modelo.DAO.DAO;
-import Modelo.Dao.Dao;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  *
@@ -20,30 +14,16 @@ import java.util.List;
  */
 public class ParticipanteDAO extends DAO<ParticipanteDTO>{
 
-    public ParticipanteDAO(Conexion connection) {
-        super(connection);
+    @Override
+    public boolean Agregar(Object dto) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-
-    public boolean Agregar(Object dto) throws SQLException {
-       String sql = "INSERT INTO participantes (id, nombre, telefono, correo) VALUES (?, ?, ?, ?)";
-       return false;
+    public boolean Eliminar(Object dto) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    String query = "Call InscripcionCrear(?,?,?,?)";
-    try(PreparedStatement stmt = connection.preparedStatement(query){
+
     
 
-        }
-    }
-        
-    @Override
-
-    public boolean Eliminar(Object dto) throws SQLException {
-     String sql = "DELETE FROM participante WHERE id = ?";
-        try (PreparedStatement statement = connection.preparedStatement(sql)) {
-            statement.setString(1, (String) id);
-            return statement.executeUpdate() > 0;
-        }
-    }
 }
