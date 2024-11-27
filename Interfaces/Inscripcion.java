@@ -4,6 +4,9 @@
  */
 package Interfaces;
 
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Student
@@ -92,8 +95,18 @@ public class Inscripcion extends javax.swing.JFrame {
         });
 
         btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -199,6 +212,27 @@ public class Inscripcion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAsistenciaActionPerformed
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+ 
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+          if(inscripcion==null){
+              showError("No se encuentra ningun particiante cargado actualmente");
+              return;
+              
+          }
+          
+          int option = JOptionPane.showConfirmDialog(
+                  this,
+                  "¿Esta seguro de que desea eliminar el participante?",
+                  "Confirmacion de eliminacion",
+                  JOptionPane.YES_NO_OPTION
+          );
+          if(option==JOptionPane.NO_OPTION) return;
+          Inscripcion.delete(inscripcion);
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -250,4 +284,8 @@ public class Inscripcion extends javax.swing.JFrame {
     private javax.swing.JTextField txtParticipante;
     private javax.swing.JTextField txtTaller;
     // End of variables declaration//GEN-END:variables
+
+    private void showError(String no_se_encuentra_ningun_particiante_cargad) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
