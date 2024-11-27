@@ -8,11 +8,11 @@ package Participantes;
  *
  * @author Student
  */
-public class Participante {
-    private int id; 
-    private String nombre;
-    private int telefono;
-    private String correo;
+public class ParticipanteDTO {
+    private final int id; 
+    private final String nombre;
+    private final int telefono;
+    private final String correo;
 
     public int getId() {
         return id;
@@ -30,7 +30,7 @@ public class Participante {
         return correo;
     }
 
-    public Participante(int id, String nombre, int telefono, String correo) {
+    public ParticipanteDTO(int id, String nombre, int telefono, String correo) {
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
