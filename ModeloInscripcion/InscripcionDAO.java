@@ -6,7 +6,13 @@ package ModeloInscripcion;
 
 import Conexion.Conexion;
 import Modelo.DAO.DAO;
+import Modelo.Dao.Dao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -20,12 +26,27 @@ public class InscripcionDAO extends DAO<InscripcionDTO> {
 
     @Override
     public boolean Agregar(Object dto) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "INSERT INTO inscripcion (id, nombre, Taller, participante,fecha,asistencia) VALUES (?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, dto.getId());
+            statement.setString(2, dto.getNombre());
+            statement.setString(3, dto.getTaller());
+            statement.setString(4, dto.getparticipante));
+             statement.setString(4, dto.getfecha));
+              statement.setString(4, dto.getasistencia));
+             
+            return statement.executeUpdate() > 0; 
+        }
     }
 
     @Override
     public boolean Eliminar(Object dto) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+     String sql = "DELETE FROM inscripcion WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, (String) id);
+            return statement.executeUpdate() > 0;
+        }
+   
     }
     
 }
