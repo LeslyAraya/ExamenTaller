@@ -1,7 +1,7 @@
 package ModeloTaller;
 
 
-import .*;
+
 import Mapper.Mapper;
 import ModeloTaller.Taller;
 import ModeloTaller.TallerDTO;
@@ -22,13 +22,22 @@ public class TallerMapper implements Mapper<Taller,TallerDTO> {
     public TallerDTO toDTO(Taller ent) {
          return new  TallerDTO(
                  ent.getId(),
-                 ent.
-         )
+                 ent.getNombre(),
+                 ent.getFecha(),
+                 ent.getLugar(),
+                 ent.getCapacidad()
+         );
     }
 
     @Override
     public Taller toENT(TallerDTO dto) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       return new Taller(
+               dto.getId(),
+               dto.getNombre(),
+               dto.getFecha(),
+               dto.getLugar(),
+               dto.getCapacidad()
+       );
     }
     
 }
