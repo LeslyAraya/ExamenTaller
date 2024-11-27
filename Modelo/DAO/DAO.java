@@ -4,10 +4,21 @@
  */
 package Modelo.DAO;
 
+import Conexion.Conexion;
+import ModeloInscripcion.InscripcionDTO;
+import java.sql.SQLException;
+
+
 /**
  *
  * @author Student
  */
-public interface DAO {
+public abstract class DAO<dto> {
+    protected Conexion connection;
     
+    public DAO(Conexion connection){
+        
+    }
+    public abstract boolean Agregar (Object dto) throws SQLException;
+    public abstract boolean Eliminar (Object dto) throws SQLException;
 }
